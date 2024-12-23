@@ -4,8 +4,9 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-// Detecting keyboard press when started === false
-$(document).keypress(function() {
+// Detecting keyboard or mouse press when started === false
+// $(document).keypress(function() { 
+$(document).on('keypress click', function() {
     if (!started) {
         $("#level-title").text("Level " + level);
         nextSequence();
